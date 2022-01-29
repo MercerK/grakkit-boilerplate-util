@@ -1,12 +1,13 @@
 {
   "name": "grakkit-boilerplate-util",
   "description": "grakkit boilerplate utility library for grakkit boilerplate",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "author": "Kyle Mercer",
   "license": "MIT",
   "main": "./dist/grakkit/index.js",
   "types": "dist/grakkit/index.d.ts",
   "scripts": {
+    "build:js": "tsc",
     "prepublish": "tsc"
   },
   "dependencies": {
