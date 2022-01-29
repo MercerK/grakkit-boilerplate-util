@@ -1,4 +1,4 @@
-import { core } from '@grakkit/stdlib-paper'
+import stdlib from '@grakkit/stdlib-paper'
 import { WebServer } from './webServer'
 
 /**
@@ -31,6 +31,6 @@ function reload() {
     WebServer.stop()
   }
 
-  core.reload()
+  stdlib.reload()
   console.log('Grakkit-Boilerplate-Util: Reloaded')
 }

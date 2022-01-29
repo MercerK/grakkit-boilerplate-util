@@ -1,15 +1,32 @@
 /* global __dirname, require, module */
+
 const webpack = require('webpack')
 const path = require('path')
+
+function initializePaths() {
+  const root = __dirname
+  const src = path.join(root, 'src')
+
+  return {
+    root,
+    src,
+    grakkit: path.join(src, 'grakkit'),
+    scripts: path.join(src, 'scripts'),
+  }
+}
+
+const paths = initializePaths()
 
 const getEnv = (env) => (env.dev ? 'development' : 'production')
 const isDev = (env) => getEnv(env) === 'development'
 
 const createConfig = (env) => ({
   mode: getEnv(env),
-  entry: __dirname + '/src/index.ts',
+  // entry: __dirname + '/src/index.ts',
+  entry: [path.join(paths.grakkit, 'index.ts'), path.join(paths.scripts, 'index.ts')],
   devtool: 'source-map',
   watch: isDev(env),
+
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',

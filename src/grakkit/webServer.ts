@@ -1,4 +1,4 @@
-import { core } from '@grakkit/stdlib-paper'
+import stdlib from '@grakkit/stdlib-paper'
 
 export class WebServer {
   static app: undefined | { listen: Function; stop: Function; get: Function } = undefined
@@ -6,7 +6,7 @@ export class WebServer {
   static start = (jarFile: string = 'java-express-0.0.10.jar', className: string = 'express.Express') => {
     if (WebServer.app) return
 
-    const Express = core.load(`./plugins/grakkit/${jarFile}`, className)
+    const Express = stdlib.load(`./plugins/grakkit/${jarFile}`, className)
 
     if (!Express) {
       throw new Error(`Unable to load "${jarFile}" in the "plugins/grakkit" folder.`)
