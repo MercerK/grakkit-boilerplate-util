@@ -1,7 +1,7 @@
 {
   "name": "grakkit-boilerplate-util",
   "description": "grakkit boilerplate utility library for grakkit boilerplate",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "author": "Kyle Mercer",
   "license": "MIT",
   "main": "./dist/grakkit/index.js",
