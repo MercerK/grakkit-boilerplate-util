@@ -26,8 +26,8 @@ interface AutoReloadOpts {
  *
  * This is not recommended for production use.
  */
-export function initializeAutoReload(opts: AutoReloadOpts) {
-  const { onStop, disableMessages = false, allowProductionUse = false } = opts
+export function initializeAutoReload(opts?: AutoReloadOpts) {
+  const { onStop, disableMessages = false, allowProductionUse = false } = opts ?? {}
   const isDev = process.env.NODE_ENV === 'development'
   const allowReload = allowProductionUse ? true : isDev
 
@@ -49,9 +49,10 @@ export function initializeAutoReload(opts: AutoReloadOpts) {
   }
 }
 
-function reload(opts: AutoReloadOpts) {
+function reload(opts?: AutoReloadOpts) {
+  const { disableMessages = false } = opts ?? {}
   WebServer.stop()
 
   stdlib.reload()
-  if (!opts.disableMessages) console.log('Grakkit-Boilerplate-Util: Reloaded')
+  if (!disableMessages) console.log('Grakkit-Boilerplate-Util: Reloaded')
 }
