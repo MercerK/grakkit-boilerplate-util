@@ -1,7 +1,7 @@
 {
   "name": "grakkit-boilerplate-util",
   "description": "grakkit boilerplate utility library for grakkit boilerplate",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "Kyle Mercer",
   "license": "MIT",
   "main": "./dist/grakkit/index.js",
@@ -9,7 +9,8 @@
   "scripts": {
     "build:js": "tsc",
     "prepublish": "tsc",
-    "postinstall": "tsc"
+    "postinstall": "tsc",
+    "changelog": "conventional-changelog -i CHANGELOG.md -s"
   },
   "dependencies": {
     "@grakkit/stdlib-paper": "^1.0.12",
@@ -17,6 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.4.6",
+    "conventional-changelog-cli": "^2.2.2",
     "webpack": "^5.37.0"
   }
 }
